@@ -19,6 +19,7 @@ Sample clips of the same passage (about a great white shark) in different narrat
 | [oliver-adventure.mp3](samples/oliver-adventure.mp3) | Oliver – male | Adventure |
 | [aria-focus.mp3](samples/aria-focus.mp3) | Aria – female | Focus |
 | [hugh-documentary.mp3](samples/hugh-documentary.mp3) | Hugh – deep male | Documentary |
+| [my-own-voice-documentary.mp3](samples/my-own-voice-documentary.mp3) | The author's own voice, cloned from a short recording | Documentary |
 
 ## Quick start (Windows)
 
