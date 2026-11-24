@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 Narrations/
+Voices/
 Music/*
 !Music/README.md
 Agent.py

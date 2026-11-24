@@ -9,6 +9,7 @@ Drop a track here named after a mode to use it instead of the built-in generated
 | `calm.mp3` | Bedtime |
 | `documentary.mp3` | Documentary |
 | `energetic.mp3` | Energetic |
+| `dramatic.mp3` | Dramatic |
 
 `.mp3`, `.wav`, `.m4a`, `.ogg` and `.flac` all work. Tracks loop if the narration is longer.
 Music files are git-ignored, so only use tracks you have the right to use.

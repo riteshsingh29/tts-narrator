@@ -2,9 +2,10 @@
 
 A small local web app: paste any text, pick a **narrator** and a **mode**, and get it read aloud. You can play it in the browser or download it as a WAV.
 
-- **10 narrator voices** (5 male, 5 female), from the open Coqui TTS VCTK/VITS model
-- **5 modes:** Adventure, Focus, Bedtime, Documentary and Energetic. Each mode has its own speaking speed, voice tone, pause length and background music.
+- **11 narrator voices** (6 male, including a deep cinematic baritone, and 5 female), from the open Coqui TTS VCTK/VITS model
+- **6 modes:** Adventure, Focus, Bedtime, Documentary, Energetic and Dramatic. Each mode has its own speaking speed, voice tone, pause length and background music.
 - **Background music** gets quieter under the voice, with a volume slider. It's generated automatically, or you can use your own tracks.
+- **Use your own voice:** record or upload a short sample on the page and narrate in your voice (see below)
 - Runs entirely on your computer. No API keys, no account and no internet connection after setup.
 
 ## Quick start (Windows)
@@ -46,14 +47,32 @@ bash setup.sh          # tells you if Python 3.11, ffmpeg or espeak-ng are missi
 | Bedtime | Slow, with long pauses | Ocean waves with a warm chord and music-box chimes |
 | Documentary | Measured | Cinematic chord with sparse piano-like notes |
 | Energetic | Fast and bright | Upbeat 120 BPM beat with a pulsing bass |
+| Dramatic | Slow and weighty, with chest resonance, light reverb and long pauses | Epic low strings with deep timpani hits |
+
+**Tip:** for a commanding, movie-trailer style narrator, use **Baritone – cinematic deep male** with **Dramatic** mode.
 
 To use your own music, see [Music/README.md](Music/README.md).
+
+## Narrate in your own voice
+
+1. On the page, open **Use your own voice** under the narrator dropdown.
+2. Click **Record** and read a few sentences aloud (or upload a recording). Aim for **10 to 30 seconds**, in a quiet room with no music or echo.
+3. Tick the confirmation box and click **Add my voice**. It then appears in the narrator list and works with every mode.
+
+Things to know:
+
+- Uses Coqui's **XTTS v2** voice-cloning model. The first narration in your voice downloads it (about **1.8 GB**), then it's cached.
+- It runs slower than the built-in voices, especially on a CPU.
+- **License:** XTTS v2 is under the [Coqui Public Model License](https://coqui.ai/cpml), which allows **non-commercial use only**.
+- Only clone your own voice, or a voice you have permission to use. Samples stay in the git-ignored `Voices/` folder on your computer and are never uploaded anywhere.
+- Narration in your voice is English for now.
 
 ## Customising
 
 Everything is in `app.py`:
 
 - `NARRATORS`: which voices appear in the dropdown and their names
+- `VOICE_VARIANTS`: styled voices built from a base speaker with its pitch shifted (`pitch` below 1 is deeper)
 - `MODES`: speed (`tempo`), ffmpeg voice filter (`af`), pause length (`pause`) and music volume (`music`)
 - `SYNTH_MUSIC`: the generated background music for each mode
 
@@ -63,4 +82,5 @@ Everything is in `app.py`:
 - **`Could not find a version that satisfies the requirement TTS`**: your Python is too new. Use 3.11 (`setup.ps1` handles this).
 - **`ffmpeg` not found**: install it, then open a new terminal so it's on your PATH.
 - **Running scripts is disabled on this system**: run the command as shown above, with `-ExecutionPolicy Bypass`.
+- **Your voice sounds off:** use a cleaner, longer sample (15 to 30 seconds, steady volume, no background noise), then remove and re-add it.
 - **Port 5000 is already in use**: set another port with `$env:PORT=5050; .\run.ps1`.
