@@ -8,6 +8,18 @@ A small local web app: paste any text, pick a **narrator** and a **mode**, and g
 - **Use your own voice:** record or upload a short sample on the page and narrate in your voice (see below)
 - Runs entirely on your computer. No API keys, no account and no internet connection after setup.
 
+## Listen first
+
+Sample clips of the same passage (about a great white shark) in different narrators and modes, each with its background music. They're in [`samples/`](samples/):
+
+| Clip | Narrator | Mode |
+|---|---|---|
+| [baritone-dramatic.mp3](samples/baritone-dramatic.mp3) | Baritone – cinematic deep male | Dramatic |
+| [fiona-bedtime.mp3](samples/fiona-bedtime.mp3) | Fiona – female | Bedtime |
+| [oliver-adventure.mp3](samples/oliver-adventure.mp3) | Oliver – male | Adventure |
+| [aria-focus.mp3](samples/aria-focus.mp3) | Aria – female | Focus |
+| [hugh-documentary.mp3](samples/hugh-documentary.mp3) | Hugh – deep male | Documentary |
+
 ## Quick start (Windows)
 
 ```powershell
